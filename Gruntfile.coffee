@@ -88,7 +88,7 @@ module.exports = (grunt) ->
                 message: 'Built from %sourceCommit% on branch %sourceBranch%'
             pages:
                 options:
-                    remote: 'git@github.com:DavertMik/atdd-slides.git'
+                    remote: 'git@github.com:DavertMik/js-framework-decisions.git'
                     branch: 'gh-pages'
         
 
