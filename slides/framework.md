@@ -478,7 +478,6 @@ Michael Bodnarchuk
 * Web developer from Kyiv, Ukraine
 * Open-source developer, author of **Codeception**, **CodeceptJS** testing frameworks
 * Consultant @ [SDCLabs](http://sdclabs.com)
-* [EasyTesting.io](http://easytesting.io)
 
 
 
