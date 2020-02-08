@@ -88,7 +88,7 @@ module.exports = (grunt) ->
                 message: 'Built from %sourceCommit% on branch %sourceBranch%'
             pages:
                 options:
-                    remote: 'git@github.com:DavertMik/puppeteer.git'
+                    remote: 'git@github.com:DavertMik/slides-puppeteer.git'
                     branch: 'gh-pages'
         
 
