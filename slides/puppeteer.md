@@ -1,17 +1,17 @@
 ## WebDriver - the end of monopoly
 
-* Slow evolution of WebDriver
-* Alternatve testing solutions
-  * Cypress.io
-  * TestCafe
-  * Puppeteer
-* Death of Internet Explorer
+* Slow evolution of WebDriver <!-- .element: class="fragment" data-fragment-index="1" -->
+* Death of Internet Explorer <!-- .element: class="fragment" data-fragment-index="2" -->
+* Alternatve testing solutions <!-- .element: class="fragment" data-fragment-index="3" -->
+  * Cypress.io <!-- .element: class="fragment" data-fragment-index="3" -->
+  * TestCafe <!-- .element: class="fragment" data-fragment-index="3" -->
+  * Puppeteer <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
 ## Puppeteer
 
-* started in 2017 by Google Chrome 
+* started in 2017 
 * by Google Chrome Team
 * based on CDP protocol
 
@@ -139,7 +139,7 @@ const body = await retryAction(() => page.$('body'));
 
 ## Assertions
 
-Use `expect-puppeteer` with Jest
+Use `jest-puppeteer` || `expect-puppeteer` 
 
 ```js
 // Will try while 500ms to click on "button"
@@ -313,11 +313,26 @@ await wd.quit();
 ## Differences with Puppeteer
 
 * Focuses on test automation
+  * auto wait for element appeared
+  * custom strategies from core
 * Includes patched Firefox & WebKit
 * Has XPath & custom selector support
+
+---
+
+## Migrate to Playwright Today
+
+⚠ Not recommended until Playwright hits 1.0
 
 [Migrating from Puppeteer to Playwright](https://medium.com/@davert/puppeteer-to-playwright-migration-guide-6c86ea66e85e?source=friends_link&sk=e3ec4d78e3f51114dadcb7aabde82451)
 
 ---
 
+
+## Not sure what to choose? 
+
+* Is Puppeteer stll a thing? 🤔 <!-- .element: class="fragment" data-fragment-index="1" -->
+* Is this a good time to migrate to Playwright? ⏲ <!-- .element: class="fragment" data-fragment-index="2" -->
+* Selenium works. Don't touch it! 👷 <!-- .element: class="fragment" data-fragment-index="3" -->
+* Only Cypress!!!!111111 We 💖 it!1111 <!-- .element: class="fragment" data-fragment-index="4" -->
 

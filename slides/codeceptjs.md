@@ -3,8 +3,10 @@
 ## CodeceptJS
 
 * Multi-driver testing framework
-  * webdriverio
+  * Webdriverio
   * Puppeteer
+  * Playwright
+  * TestCafe
   * Protractor  
 * Custom runner, mocha-based test framework 
 * High level API (with Cucumber support)
@@ -39,43 +41,25 @@ Scenario('todomvc', (I, loginPage) => {
 
 ![](img/codeceptjs-backends.svg)
 
+---
 
-## Tradeoffs
+### CodeceptUI
 
-* Relying on a framework
-* Dealing with abstractions
+![](img/codecetui.gif)
 
 ---
 
-## Anyway...
+### Writing Test in CodeceptUI
+
+![](img/new-test.gif)
 
 ---
 
-## We aim for 
+## Conclusion
 
-* Readability
-* Stability
-* Speed
-* Maintainability <!-- .element: class="fragment" data-fragment-index="1" -->
-
----
-
-## Maintainability
-
-* Tests are clear and simple
-* Developer and QA teams work together
-* Everyone is responsible for tests
-* Anyone can fix a failing test
-* Easy upgrade from legacy tools
-
----
-
-## Summary
-
-* ATDD for readable/stable/maintainable e2e tests
-* CodeceptJS to help 😉 
-
-
+* Puppeteer is a modern alternative to WebDriver <!-- .element: class="fragment" data-fragment-index="1" -->
+* Playwright extends Puppeteer to all major browsers <!-- .element: class="fragment" data-fragment-index="2" -->
+* CodeceptJS unites all browser engines with a framework on top of it <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
