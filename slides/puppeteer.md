@@ -137,6 +137,19 @@ const body = await retryAction(() => page.$('body'));
 
 ---
 
+## Assertions
+
+Use `expect-puppeteer` with Jest
+
+```js
+// Will try while 500ms to click on "button"
+await page.toClick('button')
+// make an assertion
+await expect(page).toMatchElement('div', { text: 'Success' })
+```
+
+---
+
 ## Test is executed too fast
 
 **Solution** Add extra timeout after each action
@@ -226,17 +239,9 @@ await wd.quit();
 
 # Advanced Features
 
----
-
-## CodeCoverage
-
----
-
-## Network
-
----
-
-### Cypress.io vs Puppeteer
+* code coverage (CSS, JS, source maps)
+* performance testing
+* device emulation (network emulation)
 
 ---
 
@@ -248,4 +253,71 @@ await wd.quit();
 * ~~SauceLabs~~
 
 ---
+
+### Cypress.io vs Puppeteer
+
+| Type | Cypress.io | Puppeteer |   |
+| --- | --- | --- | --- |
+| Fast | ✔  | ✔ | | 
+| Auto-retries | ✔ | ❌ | *see these slides |
+| Cross-browser support | ✔⚠  | ✔⚠ | *chromium firefox |
+| Events | Emulated | Native | * over/focus/click events may be skipped |
+| Mocking | fetch | network control | * full network control over fetch mocking |
+
+---
+
+### Cypress.io vs Puppeteer
+
+| Type | Cypress.io | Puppeteer |
+| --- | --- | --- | 
+| iFrame | ❌ | ✔ |
+| Tabs | ❌ | ✔ |
+| Incognito Window | ❌ | ✔ |
+| XPath | ❌ | ✔ |
+| async/await | ❌ | ✔ |
+| Uploads | ❌ | ✔ |
+| Downloads | ❌ | ✔ |
+| Simple <!-- .element: class="fragment" data-fragment-index="1" --> | ✔ <!-- .element: class="fragment" data-fragment-index="1" --> | ❌ <!-- .element: class="fragment" data-fragment-index="1" --> |
+| UI <!-- .element: class="fragment" data-fragment-index="2" --> | ✔ <!-- .element: class="fragment" data-fragment-index="2" --> | ❌ <!-- .element: class="fragment" data-fragment-index="2" --> |
+
+---
+
+![](img/different.jpg)
+
+---
+
+## **Playwright**
+
+* Made by the same team as Puppeteer <!-- .element: class="fragment" data-fragment-index="1" -->
+* Same API as Puppeteer <!-- .element: class="fragment" data-fragment-index="2" -->
+* Works for Firefox and Chromium... <!-- .element: class="fragment" data-fragment-index="3" -->
+
+... and Safari <!-- .element: class="fragment" data-fragment-index="4" -->
+
+---
+
+## Cross-Browser Testing
+
+|          | ver | Linux | macOS | Win |
+|   ---:   | :---: | :---: | :---:  | :---: |
+| Chromium| 81.0.4044 | ✔ | ✔ | ✔ |
+| WebKit | 13.0.4 | ✔ | ✔ | ✔ |
+| Firefox |73.0b3 | ✔ | ✔ | ✔ |
+
+* Headless is supported for all the browsers on all platforms.
+* Chromium == Microsoft Edge (new)
+* Webkit == Safari
+
+---
+
+## Differences with Puppeteer
+
+* Focuses on test automation
+* Includes patched Firefox & WebKit
+* Has XPath & custom selector support
+
+[Migrating from Puppeteer to Playwright](https://medium.com/@davert/puppeteer-to-playwright-migration-guide-6c86ea66e85e?source=friends_link&sk=e3ec4d78e3f51114dadcb7aabde82451)
+
+---
+
 
