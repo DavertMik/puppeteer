@@ -51,10 +51,10 @@
 * direct connection to browser (no need for ChromeDriver)
 * installs Chrome browser for you
 * works with Firefox 
-* APIs for:
-  * Codecoverage
-  * Browser emulation
-  * Networking
+* APIs for window/frames/tabs control
+* network API
+* workers API
+* ...
 
 ---
 
@@ -88,7 +88,7 @@ await browser.close()
 
 ---
 
-## Puppeteer Issues & Solutions
+# Puppeteer Issues & Solutions
 
 ---
 
@@ -137,13 +137,24 @@ const body = await retryAction(() => page.$('body'));
 
 ---
 
-## Assertions
+## Element is not ready yet
 
-Use `jest-puppeteer` || `expect-puppeteer` 
+* **Solution #1**. `waitForSelector` + click/type/...
+* **Solution #2**. Use retry wrapper from previous slide 👈
+* **Solution #3** Use `jest-puppeteer`
 
 ```js
 // Will try while 500ms to click on "button"
 await page.toClick('button')
+```
+
+---
+
+## Assertions
+
+Use `expect-puppeteer` from jest-puppeteer
+
+```js
 // make an assertion
 await expect(page).toMatchElement('div', { text: 'Success' })
 ```
@@ -234,6 +245,19 @@ const browser = await puppeteer.connect({
 // run test & finish
 await wd.quit();
 ```
+
+---
+
+
+## Cooking Puppeteer
+
+<img src="img/witch_cooking.png" style="float: right; width: 300px;">
+
+* Use assertion library
+* Install Jest-Puppeteer (optionally)
+* Use retry-wrappers
+* Write more wrappers! <!-- .element: class="fragment" data-fragment-index="1" -->
+
 
 ---
 

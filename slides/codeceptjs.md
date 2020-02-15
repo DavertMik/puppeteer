@@ -11,7 +11,14 @@
 * Custom runner, mocha-based test framework 
 * High level API (with Cucumber support)
 * Interactive debug mode
-* Auto retry failed steps
+
+---
+
+## Same tests for different engines
+
+![](img/codecept_ci.png)
+
+From TravisCI for CodeceptJS project 👆
 
 ---
 
@@ -37,9 +44,12 @@ Scenario('todomvc', (I, loginPage) => {
 
 ---
 
-### Architecture
+## Puppeteer-Playwright Features
 
-![](img/codeceptjs-backends.svg)
+* Assertions
+* Auto retry on failed contexts
+* RetryFailedStep plugin
+* AutoDelay plugin
 
 ---
 
